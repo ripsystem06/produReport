@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Producción</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Reporte de Producción (Versión 1.1.8)</h1>
+    
+    <form id="productionForm">
+        <div class="form-section">
+            <div class="header">
+                <div>
+                    <label>Jornada:</label>
+                    <input type="text" id="jornada" required>
+                </div>
+                <div>
+                    <label>Fecha:</label>
+                    <input type="date" id="fecha" required>
+                </div>
+                <div>
+                    <label>Plinta:</label>
+                    <input type="text" id="plinta" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="machine-info">
+                <div>
+                    <label>Máquina:</label>
+                    <input type="text" id="maquina" required>
+                </div>
+                <div>
+                    <label>Operador:</label>
+                    <input type="text" id="operador" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Autorización</th>
+                        <th>Corridas x HR</th>
+                        <th>Pz por corrida</th>
+                        <th>Totales</th>
+                        <th>Revisión Coordinador Producción</th>
+                    </tr>
+                </thead>
+                <tbody id="productionTable"></tbody>
+            </table>
+        </div>
+
+        <div class="form-section">
+            <div class="footer">
+                <div>
+                    <label>Total de piezas:</label>
+                    <input type="number" id="totalPiezas" readonly>
+                </div>
+                <div>
+                    <label>Observaciones:</label>
+                    <textarea id="observaciones" placeholder="Escriba sus observaciones aquí..."></textarea>
+                </div>
+                <div>
+                    <label>Parada imprevista (Tiempo):</label>
+                    <input type="text" id="paradaImprevista" placeholder="Ej: 30 minutos">
+                </div>
+                <div>
+                    <label>Estatus del reporte:</label>
+                    <select id="estatus">
+                        <option value="pendiente">Pendiente</option>
+                        <option value="completo">Completo</option>
+                        <option value="con errores">Con errores</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button type="button" class="btn-print" onclick="window.print()">
+                Imprimir Reporte
+            </button>
+        </div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

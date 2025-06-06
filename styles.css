@@ -1,0 +1,402 @@
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #003366;
+    --accent-color: #ff6600;
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+    --white: #ffffff;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Encabezados */
+h1, h2 {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Secciones del formulario */
+.form-section {
+    background-color: var(--light-gray);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.header, .machine-info, .footer {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.header div, .machine-info div, .footer div {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Etiquetas y campos */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    overflow-x: auto;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px 8px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(0, 86, 179, 0.05);
+}
+
+tbody tr:hover {
+    background-color: rgba(0, 86, 179, 0.1);
+}
+
+td input {
+    width: 100%;
+    padding: 6px;
+    border: none;
+    text-align: center;
+    background-color: transparent;
+}
+
+td input:focus {
+    background-color: var(--white);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+/* Columnas blancas sin campos */
+.blank-column {
+    background-color: var(--white) !important;
+    border: 1px solid #dee2e6;
+}
+
+/* Botones de control de corridas */
+.corridas-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 200;
+    transition: all 0.3s;
+    min-width: 5px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-add {
+    background-color: var(--success-color);
+    color: var(--white);
+}
+
+.btn-add:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.btn-subtract {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+
+.btn-subtract:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.corridas-input {
+    flex: 2;
+    max-width: 80px;
+    margin: 0 5px;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Campo de totales */
+.totales[readonly] {
+    background-color: #e9ecef;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Botones principales */
+.buttons {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button[type="button"] {
+    padding: 12px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 40px;
+    box-sizing: border-box;
+}
+
+.btn-print {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.btn-print:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(255, 102, 0, 0.3);
+}
+
+/* Textarea */
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Estilos optimizados para impresión */
+@media print {
+    .btn, .btn-add, .btn-subtract, button { 
+        display: none !important; 
+    }
+    
+    body {
+        background-color: white !important;
+        padding: 0;
+        margin: 0;
+        font-size: 10px;
+        line-height: 1.2;
+        color: #000;
+    }
+
+    .container {
+        padding: 8mm;
+        margin: 0;
+        box-shadow: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .form-section {
+        padding: 8px;
+        margin-bottom: 8px;
+        background-color: transparent !important;
+        border: none;
+    }
+
+    .header, .machine-info, .footer {
+        gap: 10px;
+    }
+
+    .header div, .machine-info div, .footer div {
+        min-width: 120px;
+    }
+
+    label {
+        font-size: 9px;
+        margin-bottom: 2px;
+        font-weight: bold;
+    }
+
+    input, textarea, select {
+        font-size: 9px;
+        padding: 2px 4px;
+        border: 1px solid #000;
+        background-color: transparent;
+    }
+
+    table {
+        font-size: 9px;
+        margin: 8px 0;
+    }
+
+    th {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+        font-weight: bold;
+        padding: 4px 2px;
+        font-size: 8px;
+    }
+
+    td {
+        padding: 3px 2px;
+        border: 1px solid #000;
+        height: 20px;
+        vertical-align: middle;
+    }
+
+    td input {
+        font-size: 8px;
+        padding: 1px;
+        border: none;
+        background-color: transparent;
+    }
+
+    .blank-column {
+        background-color: white !important;
+    }
+
+    .corridas-control {
+        gap: 2px;
+    }
+
+    .corridas-input {
+        max-width: 30px;
+        font-size: 8px;
+        font-weight: bold;
+    }
+
+    textarea {
+        height: 40px;
+        font-size: 8px;
+    }
+
+    @page {
+        size: A4 portrait;
+        margin: 8mm;
+    }
+
+    /* Reducir espaciado general */
+    .form-section {
+        margin-bottom: 5px;
+    }
+
+    .buttons {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header, .machine-info, .footer {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px 4px;
+    }
+
+    .corridas-control {
+        gap: 5px;
+    }
+
+    .btn {
+        min-width: 30px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .corridas-input {
+        max-width: 50px;
+    }
+}
